@@ -16,7 +16,7 @@ const body = Geist({ subsets: ['latin'], variable: '--font-body' })
 const mono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono-face' })
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
+  title: `${site.brand} — ${site.role}`,
   description: site.metaDescription,
   generator: 'v0.app',
   icons: {

@@ -12,7 +12,7 @@ export function Footer() {
 
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="font-display text-xl font-bold uppercase tracking-wider">{site.name}</p>
+          <p className="font-display text-xl font-bold uppercase tracking-wider">{site.brand}</p>
           <p className="mt-1 text-sm text-muted-foreground">{footer.note}</p>
         </div>
 
@@ -52,7 +52,7 @@ export function Footer() {
       </div>
 
       <p className="border-t border-border py-5 text-center font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-        © {year} {site.name}. All rights reserved.
+        © {year} {site.brand}. All rights reserved.
       </p>
     </footer>
   )
