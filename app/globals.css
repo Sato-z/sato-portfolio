@@ -1,0 +1,127 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------
+   Design tokens — retro-futurist / synthwave palette.
+   Near-black base with amber, magenta and cyan used as accents only.
+------------------------------------------------------------------- */
+:root {
+  color-scheme: dark;
+  --background: #0a0a0f;
+  --foreground: #e8e6f0;
+  --card: #101018;
+  --card-foreground: #e8e6f0;
+  --popover: #101018;
+  --popover-foreground: #e8e6f0;
+  --primary: #ffb020; /* electric amber */
+  --primary-foreground: #0a0a0f;
+  --secondary: #16161f;
+  --secondary-foreground: #e8e6f0;
+  --muted: #16161f;
+  --muted-foreground: #9a97ab;
+  --accent: #ff2e88; /* hot magenta */
+  --accent-foreground: #0a0a0f;
+  --cyan: #22e4f5; /* cyan */
+  --destructive: #ff5470;
+  --border: #23232f;
+  --input: #23232f;
+  --ring: #22e4f5;
+  --radius: 0rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-cyan: var(--cyan);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 0rem;
+  --radius-md: 0rem;
+  --radius-lg: 0rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  /* Offset anchored sections so the sticky nav never covers headings. */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+/* Blueprint grid: two layered linear gradients form major + minor lines. */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgb(34 228 245 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(34 228 245 / 0.06) 1px, transparent 1px),
+    linear-gradient(to right, rgb(34 228 245 / 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(34 228 245 / 0.025) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
+}
+
+/* CRT scanlines: thin repeating horizontal bands over the whole page. */
+.crt-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 0.025) 0px,
+    rgb(255 255 255 / 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* Typewriter caret blink. */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.caret {
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .caret {
+    animation: none;
+  }
+}
