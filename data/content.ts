@@ -49,14 +49,16 @@ export type SocialLink = { label: string; href: string; icon: IconName }
 /* ---------- Global site info ---------- */
 
 export const site = {
-  name: 'Samuel Dezram',
+  name: 'Selasi Samuel Dzramado',
+  /** Wordmark shown at the top-left of the navbar. */
+  brand: 'SATO®',
   initials: 'SD',
-  role: 'IT Student & Aspiring Software Engineer',
+  role: 'IT Student. Software Developer. Technology Enthusiast.',
   /** Your GitHub username — used for project repo links and the GitHub social link. */
   githubUsername: 'your-github-username',
   specialties: 'web development, AI integration and IT support',
   metaDescription:
-    'Portfolio of Samuel Dezram — IT student and aspiring software engineer working on web development, AI integration and IT support.',
+    'Portfolio of Selasi Samuel Dzramado — IT student, software developer and technology enthusiast.',
   email: 'you@example.com',
   /** WhatsApp number in international format, digits only (used to build the wa.me link). */
   whatsapp: '27000000000',
@@ -78,9 +80,9 @@ export const navLinks: NavLink[] = [
 /* ---------- Hero ---------- */
 
 export const hero = {
-  eyebrow: 'My Portfolio',
+  eyebrow: 'Personal Portfolio · Est. 2026',
   /** One line under your role — edit freely. */
-  line: 'I study IT and build web apps, small AI tools and the occasional fix for a broken network.',
+  line: 'I study Information Technology and build web applications, experiment with AI-powered tools, explore software solutions and occasionally bring broken networks back to life.',
   primaryCta: { label: 'View Projects', href: '#projects' },
   secondaryCta: { label: 'Contact Me', href: '#contact' },
   status: 'Available for internships & freelance work',
@@ -96,7 +98,7 @@ export const about = {
   ],
   /** Put your photo in /public/images and update this path. */
   photo: '/images/portrait-placeholder.png',
-  photoAlt: 'Portrait of Samuel Dezram',
+  photoAlt: 'Portrait of Selasi Samuel Dzramado',
 }
 
 /* ---------- Expertise ---------- */

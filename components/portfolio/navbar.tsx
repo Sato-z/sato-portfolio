@@ -41,11 +41,8 @@ export function Navbar() {
     >
       <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         {/* Logo / monogram */}
-        <a href="#home" className="flex items-center gap-2 font-display text-lg font-bold tracking-wider">
-          <span className="grid size-8 place-items-center border border-primary text-sm text-primary">
-            {site.initials}
-          </span>
-          <span className="hidden sm:inline">{site.name}</span>
+        <a href="#home" aria-label={`${site.brand} — back to top`} className="font-display text-xl font-bold tracking-wider">
+          {site.brand}
         </a>
 
         {/* Desktop links */}
