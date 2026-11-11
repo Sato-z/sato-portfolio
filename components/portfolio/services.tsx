@@ -11,7 +11,7 @@ const iconColors = ['text-primary border-primary/40', 'text-accent border-accent
 
 export function Services() {
   return (
-    <section id="services" className="relative py-24 md:py-32">
+    <section id="services" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading title={services.heading} intro={services.intro} />
 

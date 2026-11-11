@@ -9,7 +9,7 @@ export async function Projects() {
   const items = await Promise.all(projects.items.map(resolveProject))
 
   return (
-    <section id="projects" className="relative py-24 md:py-32">
+    <section id="projects" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading title={projects.heading} intro={projects.intro} />
 

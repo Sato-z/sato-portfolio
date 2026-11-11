@@ -13,7 +13,7 @@ const item = {
 export function Hero() {
   return (
     <section id="home" className="relative flex min-h-svh items-center pt-16">
-      <motion.div variants={container} initial="hidden" animate="show" className="mx-auto w-full max-w-6xl px-5 pb-24">
+      <motion.div variants={container} initial="hidden" animate="show" className="mx-auto w-full max-w-6xl px-5 pb-12 md:pb-16">
         <motion.p variants={item} className="mb-5 font-mono text-sm uppercase tracking-[0.2em] text-cyan">
           {hero.eyebrow}
         </motion.p>

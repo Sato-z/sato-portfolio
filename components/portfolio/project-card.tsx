@@ -9,21 +9,23 @@ type ProjectCardProps = { project: ResolvedProject; featured?: boolean }
 
 export function ProjectCard({ project, featured = false }: ProjectCardProps) {
   return (
-    <GlowCard className={cn('flex flex-col overflow-hidden', featured && 'md:flex-row')}>
-      <div
-        className={cn(
-          'relative aspect-[16/10] shrink-0 overflow-hidden border-b border-border bg-muted',
-          featured && 'md:aspect-auto md:w-3/5 md:border-b-0 md:border-r',
-        )}
-      >
-        <Image
-          src={project.image}
-          alt={`Preview of ${project.title}`}
-          fill
-          sizes={featured ? '(min-width: 768px) 680px, 100vw' : '(min-width: 768px) 560px, 100vw'}
-          className="object-cover"
-        />
-      </div>
+    <GlowCard className={cn('flex h-full flex-col overflow-hidden', featured && 'md:flex-row')}>
+      {project.image && (
+        <div
+          className={cn(
+            'relative aspect-[16/10] shrink-0 overflow-hidden border-b border-border bg-muted',
+            featured && 'md:aspect-auto md:w-3/5 md:border-b-0 md:border-r',
+          )}
+        >
+          <Image
+            src={project.image}
+            alt={`Preview of ${project.title}`}
+            fill
+            sizes={featured ? '(min-width: 768px) 680px, 100vw' : '(min-width: 768px) 560px, 100vw'}
+            className="object-cover"
+          />
+        </div>
+      )}
 
       <div className="flex flex-1 flex-col p-6 md:p-8">
         <div className="flex flex-wrap items-center gap-3">

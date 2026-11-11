@@ -6,7 +6,7 @@ import { SectionHeading } from './section-heading'
 
 export function Expertise() {
   return (
-    <section id="expertise" className="relative py-24 md:py-32">
+    <section id="expertise" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading title={expertise.heading} intro={expertise.intro} />
 

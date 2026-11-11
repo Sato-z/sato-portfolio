@@ -3,7 +3,7 @@ import { site, type Project } from '@/data/content'
 export type ResolvedProject = {
   title: string
   description: string
-  image: string
+  image?: string
   tags: string[]
   githubUrl?: string
   live?: string
@@ -61,7 +61,7 @@ export async function resolveProject(project: Project): Promise<ResolvedProject>
   return {
     title: project.title ?? (repo ? prettify(repo.name) : fullName ? prettify(fullName.split('/')[1]) : 'Untitled project'),
     description: project.description ?? repo?.description ?? 'No description yet.',
-    image: project.image ?? (fullName ? `https://opengraph.githubassets.com/1/${fullName}` : '/images/project-helpdesk.png'),
+    image: project.image ?? (fullName ? `https://opengraph.githubassets.com/1/${fullName}` : undefined),
     tags,
     githubUrl: fullName ? (repo?.html_url ?? `https://github.com/${fullName}`) : undefined,
     live: project.live ?? (repo?.homepage || undefined),

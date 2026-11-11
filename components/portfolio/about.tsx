@@ -5,7 +5,7 @@ import { SectionHeading } from './section-heading'
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32">
+    <section id="about" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading title={about.heading} />
 

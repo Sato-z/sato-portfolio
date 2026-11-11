@@ -55,15 +55,15 @@ export const site = {
   initials: 'SD',
   role: 'IT Student. Software Developer. Technology Enthusiast.',
   /** Your GitHub username — used for project repo links and the GitHub social link. */
-  githubUsername: 'your-github-username',
+  githubUsername: 'Sato-z',
   specialties: 'web development, AI integration and IT support',
   metaDescription:
     'Portfolio of Selasi Samuel Dzramado — IT student, software developer and technology enthusiast.',
-  email: 'you@example.com',
+  email: 'samuelarmado11@gmail.com',
   /** WhatsApp number in international format, digits only (used to build the wa.me link). */
-  whatsapp: '27000000000',
-  whatsappDisplay: '+27 00 000 0000',
-  location: 'South Africa',
+  whatsapp: '233545359185',
+  whatsappDisplay: '+233 54 535 9185',
+  location: 'Tema, Ghana',
 }
 
 /* ---------- Navigation ---------- */
@@ -97,7 +97,7 @@ export const about = {
     "Right now I work mostly with Next.js and TypeScript, I'm experimenting with computer vision in a camera project, and I help people with everyday IT problems.",
   ],
   /** Put your photo in /public/images and update this path. */
-  photo: '/images/portrait-placeholder.png',
+  photo: '/images/profile.jpg',
   photoAlt: 'Portrait of Selasi Samuel Dzramado',
 }
 
@@ -147,33 +147,30 @@ export const services = {
 
 export const projects = {
   heading: 'Projects',
-  intro: 'Things I have built or am building. Each card links to its GitHub repository.',
+  intro: 'Things I have built or am building.',
   /**
    * Add a project by adding { repo: 'repo-name' }. Details are fetched from GitHub
    * (refreshed hourly). The fields below are fallbacks until the repos exist.
    */
   items: [
     {
-      repo: 'camera-ai',
-      title: 'Camera AI',
+      title: 'CameraAI',
       description: 'Computer vision in the browser: detects and labels objects in a live camera feed.',
       image: '/images/project-camera-ai.png',
       tags: ['Next.js', 'TypeScript', 'TensorFlow.js'],
       status: 'In progress',
     },
     {
-      repo: 'school-project',
-      title: 'School Project',
-      description: 'Replace the repo name with one of your school projects.',
-      image: '/images/project-helpdesk.png',
-      tags: ['React', 'Postgres'],
+      repo: 'Sato-z/hadash-school',
+      title: 'Hadash School Management System',
+      description: 'A school management system built with JavaScript, React and Vite.',
+      tags: ['JavaScript', 'React', 'Vite'],
     },
     {
-      repo: 'another-project',
-      title: 'Another Project',
-      description: 'Replace the repo name with another project from your GitHub.',
-      image: '/images/project-store.png',
-      tags: ['Next.js', 'Tailwind'],
+      repo: 'Sato-z/datalink-class-planner',
+      title: 'Datalink Class Planner',
+      description: 'A class planner built with TypeScript.',
+      tags: ['TypeScript'],
     },
   ] satisfies Project[],
 }
@@ -182,13 +179,13 @@ export const projects = {
 
 export const contact = {
   heading: 'Contact',
-  intro: "Have a project, opportunity or question? Send a message and I'll get back to you.",
+  intro: 'Email delivery from this site is not configured yet. The form opens a draft in your email app for you to send.',
   form: {
     nameLabel: 'Name',
     emailLabel: 'Email',
     messageLabel: 'Message',
-    submit: 'Send Message',
-    success: 'Thanks! Your email app should open with the message ready to send.',
+    submit: 'Open Email Draft',
+    success: 'Your email draft should open. It is not sent until you send it from your email app.',
     errors: {
       name: 'Please enter your name (at least 2 characters).',
       email: 'Please enter a valid email address.',

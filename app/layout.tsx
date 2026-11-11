@@ -18,7 +18,6 @@ const mono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono-face' })
 export const metadata: Metadata = {
   title: `${site.brand} — ${site.role}`,
   description: site.metaDescription,
-  generator: 'v0.app',
   icons: {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
