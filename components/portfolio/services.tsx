@@ -13,7 +13,7 @@ export function Services() {
   return (
     <section id="services" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionHeading kicker={services.kicker} title={services.heading} intro={services.intro} />
+        <SectionHeading title={services.heading} intro={services.intro} />
 
         <ul className="grid gap-5 md:grid-cols-3">
           {services.items.map((service, i) => (

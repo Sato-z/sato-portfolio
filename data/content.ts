@@ -25,30 +25,40 @@ export type IconName =
   | 'globe'
 
 export type NavLink = { id: string; label: string }
-export type Stat = { value: string; label: string }
 export type Skill = { name: string; description: string; icon: IconName; level: string }
 export type Service = { title: string; description: string; icon: IconName; points: string[] }
+/**
+ * A project card. Only `repo` is needed — the title, description, tags, live link
+ * and a preview image are pulled from GitHub automatically. Any field you set
+ * here overrides what GitHub returns.
+ */
 export type Project = {
-  title: string
-  description: string
-  image: string
-  tags: string[]
-  github?: string
+  /** "repo-name" (uses site.githubUsername) or "owner/repo-name" or a full github.com URL. */
+  repo?: string
+  title?: string
+  description?: string
+  /** Local image in /public, e.g. "/images/my-project.png". Defaults to GitHub's repo preview image. */
+  image?: string
+  tags?: string[]
   live?: string
-  /** Marks a placeholder card so it can be styled / replaced later. */
-  placeholder?: boolean
+  /** Optional short label, e.g. "In progress". */
+  status?: string
 }
 export type SocialLink = { label: string; href: string; icon: IconName }
 
 /* ---------- Global site info ---------- */
 
 export const site = {
-  name: '[YOUR NAME]',
-  initials: 'YN',
-  role: 'IT Student & Aspiring Software Developer',
+  name: 'Selasi Samuel Dzramado',
+  /** Wordmark shown at the top-left of the navbar. */
+  brand: 'SATO®',
+  initials: 'SD',
+  role: 'IT Student. Software Developer. Technology Enthusiast.',
+  /** Your GitHub username — used for project repo links and the GitHub social link. */
+  githubUsername: 'your-github-username',
   specialties: 'web development, AI integration and IT support',
   metaDescription:
-    'Portfolio of [YOUR NAME] — an IT student and aspiring software developer specialising in web development, AI integration and IT support.',
+    'Portfolio of Selasi Samuel Dzramado — IT student, software developer and technology enthusiast.',
   email: 'you@example.com',
   /** WhatsApp number in international format, digits only (used to build the wa.me link). */
   whatsapp: '27000000000',
@@ -70,14 +80,9 @@ export const navLinks: NavLink[] = [
 /* ---------- Hero ---------- */
 
 export const hero = {
-  eyebrow: 'SYS://PORTFOLIO v1.0 — ONLINE',
-  greeting: "Hi, I'm",
-  /** Phrases cycled by the typewriter effect. */
-  taglines: [
-    'I build fast, modern web apps.',
-    'I wire AI into real products.',
-    'I keep systems running smoothly.',
-  ],
+  eyebrow: 'Personal Portfolio · Est. 2026',
+  /** One line under your role — edit freely. */
+  line: 'I study Information Technology and build web applications, experiment with AI-powered tools, explore software solutions and occasionally bring broken networks back to life.',
   primaryCta: { label: 'View Projects', href: '#projects' },
   secondaryCta: { label: 'Contact Me', href: '#contact' },
   status: 'Available for internships & freelance work',
@@ -87,25 +92,19 @@ export const hero = {
 
 export const about = {
   heading: 'About Me',
-  kicker: '01 // PROFILE',
   paragraphs: [
-    "I'm an IT student with a passion for building software that solves real problems. I enjoy the whole journey — from sketching an idea to shipping a polished, responsive interface.",
-    'My focus is modern web development with Next.js and TypeScript, integrating AI features into everyday tools, and providing dependable IT support. I learn fast, document well and love working in teams.',
+    "I'm an IT student. Most of what I know about software I've learned by building things for school, for friends and for myself.",
+    "Right now I work mostly with Next.js and TypeScript, I'm experimenting with computer vision in a camera project, and I help people with everyday IT problems.",
   ],
-  photoAlt: 'Placeholder portrait — replace with your own photo',
+  /** Put your photo in /public/images and update this path. */
   photo: '/images/portrait-placeholder.png',
-  stats: [
-    { value: '10+', label: 'Projects Built' },
-    { value: '3', label: 'Years Learning' },
-    { value: '100%', label: 'Commitment' },
-  ] satisfies Stat[],
+  photoAlt: 'Portrait of Selasi Samuel Dzramado',
 }
 
 /* ---------- Expertise ---------- */
 
 export const expertise = {
   heading: 'Expertise',
-  kicker: '02 // STACK',
   intro: 'The tools and technologies I use to design, build and support modern software.',
   skills: [
     { name: 'Next.js', icon: 'code', level: 'Framework', description: 'App Router, server components and full-stack React applications.' },
@@ -121,7 +120,6 @@ export const expertise = {
 
 export const services = {
   heading: 'Services',
-  kicker: '03 // OFFER',
   intro: 'How I can help you or your organisation.',
   items: [
     {
@@ -149,41 +147,33 @@ export const services = {
 
 export const projects = {
   heading: 'Projects',
-  kicker: '04 // WORK',
-  intro: 'A selection of things I have designed and built.',
+  intro: 'Things I have built or am building. Each card links to its GitHub repository.',
+  /**
+   * Add a project by adding { repo: 'repo-name' }. Details are fetched from GitHub
+   * (refreshed hourly). The fields below are fallbacks until the repos exist.
+   */
   items: [
     {
-      title: 'CameraAI',
-      description: 'A browser-based computer vision app that detects and labels objects in a live camera feed in real time.',
+      repo: 'camera-ai',
+      title: 'Camera AI',
+      description: 'Computer vision in the browser: detects and labels objects in a live camera feed.',
       image: '/images/project-camera-ai.png',
       tags: ['Next.js', 'TypeScript', 'TensorFlow.js'],
-      github: 'https://github.com/',
-      live: 'https://example.com/',
+      status: 'In progress',
     },
     {
-      title: '[PROJECT NAME]',
-      description: 'An IT helpdesk dashboard for logging, assigning and tracking support tickets. Replace with your own project.',
+      repo: 'school-project',
+      title: 'School Project',
+      description: 'Replace the repo name with one of your school projects.',
       image: '/images/project-helpdesk.png',
-      tags: ['React', 'Postgres', 'Tailwind'],
-      github: 'https://github.com/',
-      placeholder: true,
+      tags: ['React', 'Postgres'],
     },
     {
-      title: '[PROJECT NAME]',
-      description: 'A modern e-commerce storefront with product filtering and a cart. Replace with your own project.',
+      repo: 'another-project',
+      title: 'Another Project',
+      description: 'Replace the repo name with another project from your GitHub.',
       image: '/images/project-store.png',
-      tags: ['Next.js', 'Stripe', 'Tailwind'],
-      github: 'https://github.com/',
-      live: 'https://example.com/',
-      placeholder: true,
-    },
-    {
-      title: '[PROJECT NAME]',
-      description: 'An AI chat assistant that answers questions about course material. Replace with your own project.',
-      image: '/images/project-chatbot.png',
-      tags: ['AI SDK', 'TypeScript', 'LLM'],
-      github: 'https://github.com/',
-      placeholder: true,
+      tags: ['Next.js', 'Tailwind'],
     },
   ] satisfies Project[],
 }
@@ -192,7 +182,6 @@ export const projects = {
 
 export const contact = {
   heading: 'Contact',
-  kicker: '05 // CONNECT',
   intro: "Have a project, opportunity or question? Send a message and I'll get back to you.",
   form: {
     nameLabel: 'Name',
@@ -207,7 +196,7 @@ export const contact = {
     },
   },
   socials: [
-    { label: 'GitHub', href: 'https://github.com/', icon: 'github' },
+    { label: 'GitHub', href: `https://github.com/${site.githubUsername}`, icon: 'github' },
     { label: 'LinkedIn', href: 'https://linkedin.com/', icon: 'linkedin' },
     { label: 'Website', href: 'https://example.com/', icon: 'globe' },
   ] satisfies SocialLink[],

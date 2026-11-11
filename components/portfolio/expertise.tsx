@@ -8,7 +8,7 @@ export function Expertise() {
   return (
     <section id="expertise" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionHeading kicker={expertise.kicker} title={expertise.heading} intro={expertise.intro} />
+        <SectionHeading title={expertise.heading} intro={expertise.intro} />
 
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {expertise.skills.map((skill, i) => (

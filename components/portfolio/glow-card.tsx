@@ -1,32 +1,17 @@
 import { cn } from '@/lib/utils'
 
-type Accent = 'amber' | 'magenta' | 'cyan'
-
-/* Hover styles per accent: border tint + matching outer glow. */
-const accentStyles: Record<Accent, string> = {
-  amber: 'hover:border-primary/70 hover:shadow-[0_0_28px_-6px_var(--primary)]',
-  magenta: 'hover:border-accent/70 hover:shadow-[0_0_28px_-6px_var(--accent)]',
-  cyan: 'hover:border-cyan/70 hover:shadow-[0_0_28px_-6px_var(--cyan)]',
+type CardProps = React.HTMLAttributes<HTMLDivElement> & {
+  /** Kept for compatibility with existing callers; cards no longer change colour per accent. */
+  accent?: 'amber' | 'magenta' | 'cyan'
 }
 
-type GlowCardProps = React.HTMLAttributes<HTMLDivElement> & { accent?: Accent }
-
-/**
- * Sharp-cornered card with a 1px border that lifts and glows on hover.
- * Corner ticks mimic blueprint registration marks.
- */
-export function GlowCard({ accent = 'cyan', className, children, ...props }: GlowCardProps) {
+/** Plain bordered card with a subtle border change on hover. */
+export function GlowCard({ accent: _accent, className, children, ...props }: CardProps) {
   return (
     <div
-      className={cn(
-        'group relative h-full border border-border bg-card/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1',
-        accentStyles[accent],
-        className,
-      )}
+      className={cn('group relative h-full border border-border bg-card transition-colors hover:border-foreground/25', className)}
       {...props}
     >
-      <span aria-hidden="true" className="pointer-events-none absolute -left-px -top-px size-3 border-l border-t border-foreground/40" />
-      <span aria-hidden="true" className="pointer-events-none absolute -bottom-px -right-px size-3 border-b border-r border-foreground/40" />
       {children}
     </div>
   )
