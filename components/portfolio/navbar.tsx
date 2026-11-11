@@ -42,7 +42,7 @@ export function Navbar() {
       <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         {/* Logo / monogram */}
         <a href="#home" className="flex items-center gap-2 font-display text-lg font-bold tracking-wider">
-          <span className="grid size-8 place-items-center border border-primary text-sm text-primary shadow-[0_0_12px_-2px_var(--primary)]">
+          <span className="grid size-8 place-items-center border border-primary text-sm text-primary">
             {site.initials}
           </span>
           <span className="hidden sm:inline">{site.name}</span>
@@ -67,7 +67,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-underline"
-                      className="absolute inset-x-3 -bottom-0.5 h-px bg-primary shadow-[0_0_8px_var(--primary)]"
+                      className="absolute inset-x-3 -bottom-0.5 h-px bg-primary"
                     />
                   )}
                 </a>

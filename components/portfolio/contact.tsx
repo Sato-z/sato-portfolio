@@ -22,7 +22,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionHeading kicker={contact.kicker} title={contact.heading} intro={contact.intro} />
+        <SectionHeading title={contact.heading} intro={contact.intro} />
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           {/* Left: direct channels + socials */}
@@ -54,7 +54,7 @@ export function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${s.label} (opens in new tab)`}
-                    className="grid size-11 place-items-center border border-border text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-accent hover:text-accent hover:shadow-[0_0_20px_-6px_var(--accent)]"
+                    className="grid size-11 place-items-center border border-border text-muted-foreground transition-all hover:border-accent hover:text-accent"
                   >
                     <Icon name={s.icon} className="size-5" />
                   </a>

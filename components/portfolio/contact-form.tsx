@@ -59,7 +59,7 @@ export function ContactForm() {
   /* Shared input styling; switches to magenta when the field has an error. */
   const fieldClass = (hasError: boolean) =>
     cn(
-      'w-full border bg-background/60 px-4 py-3 text-foreground placeholder:text-muted-foreground/60 outline-none transition-all focus:shadow-[0_0_20px_-8px_var(--cyan)]',
+      'w-full border bg-background/60 px-4 py-3 text-foreground placeholder:text-muted-foreground/60 outline-none transition-all',
       hasError ? 'border-accent focus:border-accent' : 'border-border focus:border-cyan',
     )
 
@@ -110,7 +110,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="group mt-6 inline-flex w-full items-center justify-center gap-2 border border-primary bg-primary px-6 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-primary-foreground transition-shadow hover:shadow-[0_0_28px_-4px_var(--primary)] sm:w-auto"
+        className="group mt-6 inline-flex w-full items-center justify-center gap-2 border border-primary bg-primary px-6 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-primary-foreground transition-shadow sm:w-auto"
       >
         {form.submit}
         <Send className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
